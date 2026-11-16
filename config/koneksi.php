@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "db_sekolahG"; // Sesuaikan dengan nama database Anda
+$db   = "db_sekolah"; // Sesuaikan dengan nama database Anda
 
 $koneksi = mysqli_connect($host, $user, $pass, $db);
 if (!$koneksi) {
