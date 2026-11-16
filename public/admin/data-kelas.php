@@ -57,7 +57,7 @@
           </div>
         </dialog>
 
-        <a href="tambah-data-kelas.html" class="btn-solid theme-success">Tambah Kelas</a>
+        <a href="tambah-data-kelas.php" class="btn-solid theme-success">Tambah Kelas</a>
       </div>
 
       <div class="row">

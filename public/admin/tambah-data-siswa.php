@@ -8,7 +8,7 @@
       <div class="row mb-3">
         <div class="d-flex justify-content-between align-items-center">
           <h4>Tambah Data Siswa</h4>
-          <a href="data-siswa.html" class="btn-solid theme-success">Kembali</a>
+          <a href="data-siswa.php" class="btn-solid theme-success">Kembali</a>
         </div>
       </div>
 

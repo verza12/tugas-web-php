@@ -70,7 +70,7 @@
           </div>
         </dialog>
 
-        <a href="tambah-data-guru.html" class="btn-solid theme-success">Tambah Guru</a>
+        <a href="tambah-data-guru.php" class="btn-solid theme-success">Tambah Guru</a>
       </div>
 
       <div class="row">
