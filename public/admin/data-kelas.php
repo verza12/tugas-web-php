@@ -74,10 +74,10 @@
           </thead>
           <tbody>
             <?php
-            $query = "SELECT * FROM data_kelas";
+            $query = "SELECT * FROM data_kelas ORDER BY nama_kelas ASC";
             $result = mysqli_query($koneksi, $query);
             $no = 1;
-            if (mysqli_num_rows($result) > 0) {
+            if ($result && mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_assoc($result)) {
             ?>
                 <tr>

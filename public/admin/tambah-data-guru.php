@@ -8,11 +8,11 @@
       <div class="row mb-3">
         <div class="d-flex justify-content-between align-items-center">
           <h4>Tambah Data Guru</h4>
-          <a href="data-guru.html" class="btn-solid theme-success">Kembali</a>
+          <a href="data-guru.php" class="btn-solid theme-success">Kembali</a>
         </div>
       </div>
 
-      <form action="" method="post" enctype="multipart/form-data">
+      <form action="../../action/admin/proses-tambah-guru.php" method="post">
         <!-- NIP -->
         <div class="mb-3">
           <label class="form-label" for="nip">NIP</label>
@@ -21,19 +21,19 @@
 
         <!-- Nama Guru -->
         <div class="mb-3">
-          <label class="form-label" for="nama">Nama Guru</label>
-          <input class="form-control" type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" minlength="3" maxlength="100" required />
+          <label class="form-label" for="nama_guru">Nama Guru</label>
+          <input class="form-control" type="text" id="nama_guru" name="nama_guru" placeholder="Masukkan nama lengkap" minlength="3" maxlength="100" required />
         </div>
 
         <!-- Kelamin -->
         <div class="mb-3">
           <label class="form-label d-block">Jenis Kelamin</label>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="kelaminL" name="kelamin" value="Laki-laki" required />
-            <label class="form-check-label" for="kelaminL">Laki-laki</label>
+            <input class="form-check-input" type="radio" id="kelaminL" name="jenis_kelamin" value="Laki-Laki" required />
+            <label class="form-check-label" for="kelaminL">Laki-Laki</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="kelaminP" name="kelamin" value="Perempuan" required />
+            <input class="form-check-input" type="radio" id="kelaminP" name="jenis_kelamin" value="Perempuan" required />
             <label class="form-check-label" for="kelaminP">Perempuan</label>
           </div>
         </div>
@@ -56,7 +56,7 @@
           <textarea class="form-control" id="alamat" name="alamat" rows="4" minlength="10" maxlength="200" required></textarea>
         </div>
 
-        <a href="data-guru.html" type="button" class="btn-solid theme-secondary">Batal</a>
+        <a href="data-guru.php" type="button" class="btn-solid theme-secondary">Batal</a>
         <button type="reset" class="btn-solid theme-danger">Reset</button>
         <button type="submit" class="btn-solid theme-success">Simpan Data</button>
       </form>

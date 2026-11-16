@@ -89,10 +89,10 @@
           </thead>
           <tbody>
             <?php
-            $query = "SELECT * FROM data_guru";
+            $query = "SELECT * FROM data_guru ORDER BY nama_guru ASC";
             $result = mysqli_query($koneksi, $query);
             $no = 1;
-            if (mysqli_num_rows($result) > 0) {
+            if ($result && mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_assoc($result)) {
             ?>
                 <tr>
@@ -118,8 +118,9 @@
                             <div class="card-body">
                               <h4 class="card-title"><?= htmlspecialchars($row['nama_guru']); ?></h4>
                               <p class="card-text">NIP: <?= htmlspecialchars($row['nip']); ?></p>
+                              <p class="card-text">Jenis Kelamin: <?= htmlspecialchars($row['jenis_kelamin']); ?></p>
+                              <p class="card-text">Nomor Telepon: <?= htmlspecialchars($row['nomor_telepon']); ?></p>
                               <p class="card-text">Email: <?= htmlspecialchars($row['email']); ?></p>
-                              <p class="card-text">Telepon: <?= htmlspecialchars($row['nomor_telepon']); ?></p>
                               <p class="card-text">Alamat: <?= htmlspecialchars($row['alamat']); ?></p>
                             </div>
                           </div>

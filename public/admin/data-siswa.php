@@ -130,10 +130,10 @@
           </thead>
           <tbody>
             <?php
-            $query = "SELECT * FROM data_siswa";
+            $query = "SELECT * FROM data_siswa ORDER BY nama_lengkap ASC";
             $result = mysqli_query($koneksi, $query);
             $no = 1;
-            if (mysqli_num_rows($result) > 0) {
+            if ($result && mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_assoc($result)) {
             ?>
                 <tr>
@@ -155,12 +155,16 @@
                         </div>
                         <div class="dialog-body">
                           <div class="card card-row">
-                            <img src="<?= $row['foto_siswa'] ? '../../asset/img/' . $row['foto_siswa'] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYGSmOrPWRd3g1ahbAQ7UPZVYgI2h0aYUpu3VXVnwWDw&s=10'; ?>" width="170" height="180" alt="gambar" />
+                            <img src="<?= !empty($row['foto_siswa']) ? '../../asset/img/' . htmlspecialchars($row['foto_siswa']) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYGSmOrPWRd3g1ahbAQ7UPZVYgI2h0aYUpu3VXVnwWDw&s=10'; ?>" width="170" height="180" alt="gambar" />
                             <div class="card-body">
                               <h4 class="card-title"><?= htmlspecialchars($row['nama_lengkap']); ?></h4>
+                              <p class="card-text">NISN: <?= htmlspecialchars($row['nisn']); ?></p>
                               <p class="card-text">NIS: <?= htmlspecialchars($row['nis']); ?></p>
+                              <p class="card-text">Kelas: <?= htmlspecialchars($row['kelas']); ?></p>
+                              <p class="card-text">Jenis Kelamin: <?= htmlspecialchars($row['jenis_kelamin']); ?></p>
+                              <p class="card-text">Tempat, Tanggal Lahir: <?= htmlspecialchars($row['tempat_lahir']); ?>, <?= htmlspecialchars($row['tanggal_lahir']); ?></p>
                               <p class="card-text">Agama: <?= htmlspecialchars($row['agama']); ?></p>
-                              <p class="card-text">Lahir: <?= htmlspecialchars($row['tempat_lahir']); ?>, <?= htmlspecialchars($row['tanggal_lahir']); ?></p>
+                              <p class="card-text">Nomor Telepon: <?= htmlspecialchars($row['nomor_telepon']); ?></p>
                               <p class="card-text">Alamat: <?= htmlspecialchars($row['alamat']); ?></p>
                             </div>
                           </div>
@@ -170,6 +174,7 @@
                         </div>
                       </dialog>
 
+                      <!-- Edit Dialog Placeholder -->
                       <button type="button" class="btn-solid btn-sm theme-primary">Edit</button>
                       <button type="button" class="btn-solid theme-danger btn-sm"><i class="bi bi-trash2-fill"></i></button>
                     </div>

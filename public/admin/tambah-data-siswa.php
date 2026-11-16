@@ -12,11 +12,11 @@
         </div>
       </div>
 
-      <form action="" method="post" enctype="multipart/form-data">
+      <form action="../../action/admin/proses-tambah-siswa.php" method="post" enctype="multipart/form-data">
         <!-- NISN -->
         <div class="mb-3">
           <label class="form-label" for="nisn">NISN</label>
-          <input class="form-control" type="text" inputmode="numeric" id="nisn" name="nisn" placeholder="10 digit angka" pattern="[0-9]{10}" minlength="10" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+          <input class="form-control" type="text" inputmode="numeric" id="nisn" name="nisn" placeholder="10 digit angka" pattern="[0-9]{10}" minlength="10" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required />
         </div>
 
         <!-- NIS -->
@@ -27,8 +27,8 @@
 
         <!-- Nama siswa -->
         <div class="mb-3">
-          <label class="form-label" for="nama">Nama Siswa</label>
-          <input class="form-control" type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" minlength="3" maxlength="100" required />
+          <label class="form-label" for="nama_lengkap">Nama Lengkap</label>
+          <input class="form-control" type="text" id="nama_lengkap" name="nama_lengkap" placeholder="Masukkan nama lengkap" minlength="3" maxlength="100" required />
         </div>
 
         <!-- Kelas -->
@@ -36,8 +36,12 @@
           <label class="form-label" for="kelas">Pilih Kelas</label>
           <select class="form-control" name="kelas" id="kelas" required>
             <option value="" disabled selected>Pilih Kelas</option>
-            <option value="rpl1">XI RPL 1</option>
-            <option value="rpl2">XI RPL 2</option>
+            <option value="X RPL 1">X RPL 1</option>
+            <option value="X RPL 2">X RPL 2</option>
+            <option value="XI RPL 1">XI RPL 1</option>
+            <option value="XI RPL 2">XI RPL 2</option>
+            <option value="XII RPL 1">XII RPL 1</option>
+            <option value="XII RPL 2">XII RPL 2</option>
           </select>
         </div>
 
@@ -45,25 +49,25 @@
         <div class="mb-3">
           <label class="form-label d-block">Jenis Kelamin</label>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="kelaminL" name="kelamin" value="Laki-laki" required />
+            <input class="form-check-input" type="radio" id="kelaminL" name="jenis_kelamin" value="L" required />
             <label class="form-check-label" for="kelaminL">Laki-laki</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="kelaminP" name="kelamin" value="Perempuan" required />
+            <input class="form-check-input" type="radio" id="kelaminP" name="jenis_kelamin" value="P" required />
             <label class="form-check-label" for="kelaminP">Perempuan</label>
           </div>
         </div>
 
         <!-- Tempat lahir -->
         <div class="mb-3">
-          <label class="form-label" for="tempatlahir">Tempat lahir</label>
-          <input class="form-control" type="text" id="tempatlahir" name="tempatlahir" placeholder="min. 4 karakter, maks. 50 karakter" minlength="4" maxlength="50" required />
+          <label class="form-label" for="tempat_lahir">Tempat lahir</label>
+          <input class="form-control" type="text" id="tempat_lahir" name="tempat_lahir" placeholder="min. 4 karakter, maks. 50 karakter" minlength="4" maxlength="50" required />
         </div>
 
         <!-- Tanggal Lahir -->
         <div class="mb-3">
-          <label class="form-label" for="tanggalLahir">Tanggal Lahir</label>
-          <input class="form-control" type="date" id="tanggalLahir" name="tanggalLahir" required />
+          <label class="form-label" for="tanggal_lahir">Tanggal Lahir</label>
+          <input class="form-control" type="date" id="tanggal_lahir" name="tanggal_lahir" required />
         </div>
 
         <!-- Agama -->
@@ -72,11 +76,11 @@
           <select class="form-control" name="agama" id="agama" required>
             <option value="" disabled selected>Pilih Agama</option>
             <option value="Islam">Islam</option>
-            <option value="Kristen">Kristen</option>
+            <option value="Budha">Budha</option>
             <option value="Hindu">Hindu</option>
-            <option value="Buddha">Buddha</option>
-            <option value="Katholik">Katholik</option>
-            <option value="Khong hu chu">Khong hu chu</option>
+            <option value="Kristen">Kristen</option>
+            <option value="Katolik">Katolik</option>
+            <option value="Konghucu">Konghucu</option>
           </select>
         </div>
 
@@ -98,7 +102,7 @@
           <textarea class="form-control" id="alamat" name="alamat" rows="4" minlength="10" maxlength="200" required></textarea>
         </div>
 
-        <a href="data-siswa.html" type="button" class="btn-solid theme-secondary">Batal</a>
+        <a href="data-siswa.php" class="btn-solid theme-secondary">Batal</a>
         <button type="reset" class="btn-solid theme-danger">Reset</button>
         <button type="submit" class="btn-solid theme-success">Simpan Data</button>
       </form>
