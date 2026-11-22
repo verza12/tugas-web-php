@@ -87,7 +87,7 @@
         <!-- Telepon -->
         <div class="mb-3">
           <label class="form-label" for="nomor_telepon">Nomor Telepon</label>
-          <input class="form-control" type="tel" id="nomor_telepon" name="nomor_telepon" placeholder="Contoh: 08123456789" required />
+          <input class="form-control" type="tel" id="nomor_telepon" name="nomor_telepon" inputmode="numeric" pattern="[0-9]*" maxlength="13" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Contoh: 08123456789" required />
         </div>
 
         <!-- Foto -->

@@ -155,7 +155,7 @@
                         </div>
                         <div class="dialog-body">
                           <div class="card card-row">
-                            <img src="<?= !empty($row['foto_siswa']) ? '../../asset/img/' . htmlspecialchars($row['foto_siswa']) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYGSmOrPWRd3g1ahbAQ7UPZVYgI2h0aYUpu3VXVnwWDw&s=10'; ?>" width="170" height="180" alt="gambar" />
+                            <img src="<?= !empty($row['foto_siswa']) ? '../upload/' . htmlspecialchars($row['foto_siswa']) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYGSmOrPWRd3g1ahbAQ7UPZVYgI2h0aYUpu3VXVnwWDw&s=10'; ?>" width="170" height="180" alt="gambar" />
                             <div class="card-body">
                               <h4 class="card-title"><?= htmlspecialchars($row['nama_lengkap']); ?></h4>
                               <p class="card-text">NISN: <?= htmlspecialchars($row['nisn']); ?></p>
@@ -174,8 +174,8 @@
                         </div>
                       </dialog>
 
-                      <!-- Edit Dialog Placeholder -->
-                      <button type="button" class="btn-solid btn-sm theme-primary">Edit</button>
+                      <!-- Edit Button -->
+                      <a href="edit-data-siswa.php?id=<?= $row['id']; ?>" class="btn-solid btn-sm theme-primary">Edit</a>
                       <button type="button" class="btn-solid theme-danger btn-sm"><i class="bi bi-trash2-fill"></i></button>
                     </div>
                   </td>
