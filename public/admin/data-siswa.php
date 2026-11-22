@@ -1,5 +1,9 @@
  <?php
- include_once  '../../config/koneksi.php';
+ session_start();
+  include_once  '../../config/koneksi.php';
+  if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+  }
  include  '../../template/header-admin.php';
  include  '../../template/navbar-admin.php';
  
@@ -176,7 +180,25 @@
 
                       <!-- Edit Button -->
                       <a href="edit-data-siswa.php?id=<?= $row['id']; ?>" class="btn-solid btn-sm theme-primary">Edit</a>
-                      <button type="button" class="btn-solid theme-danger btn-sm"><i class="bi bi-trash2-fill"></i></button>
+                      <button type="button" class="btn-solid theme-danger btn-sm" data-bs-toggle="dialog" data-bs-target="#hapusdatasiswa<?= $row['id']; ?>"><i class="bi bi-trash2-fill"></i></button>
+
+                      <dialog class="dialog" id="hapusdatasiswa<?= $row['id']; ?>">
+                        <div class="dialog-header">
+                          <h1 class="dialog-title">Konfirmasi Hapus</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="dialog" aria-label="Close"></button>
+                        </div>
+                        <div class="dialog-body">
+                          Apakah Anda yakin ingin menghapus data siswa <strong><?= htmlspecialchars($row['nama_lengkap']); ?></strong>?
+                        </div>
+                        <div class="dialog-footer">
+                          <button type="button" class="btn-solid theme-secondary" data-bs-dismiss="dialog">Batal</button>
+                          <form action="../../action/admin/proses-hapus-siswa.php" method="post">
+                            <input type="hidden" name="id" value="<?= $row['id']; ?>">
+                            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']); ?>">
+                            <button type="submit" class="btn-solid theme-danger">Hapus</button>
+                          </form>
+                        </div>
+                      </dialog>
                     </div>
                   </td>
                 </tr>
