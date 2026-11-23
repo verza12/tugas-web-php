@@ -1,6 +1,6 @@
  <?php
  session_start();
-  include_once  '../../config/koneksi.php';
+  include_once __DIR__ . '/../../config/koneksi.php';
   if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
   }
