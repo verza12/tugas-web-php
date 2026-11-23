@@ -58,7 +58,7 @@
         <div class="col">
           <div class="text-center">
             <h1>Login Page</h1>
-            <a href="public/admin/index-v6.php" class="btn btn-primary">Login Admin hihjkhk</a>
+            <a href="public/admin/index.php" class="btn btn-primary">Login Admin hihjkhk</a>
             <a href="register.php" class="btn btn-primary">Register</a>
           </div>
         </div>

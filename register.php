@@ -61,7 +61,7 @@
       <div class="row">
         <div class="text-center">
           <h1>Register Page</h1>
-          <a href="/dasborprojek-v6/public/admin/index-v6.php" class="btn btn-primary">Login</a>
+          <a href="/dasborprojek-v6/public/admin/index.php" class="btn btn-primary">Login</a>
         </div>
       </div>
     </div>
